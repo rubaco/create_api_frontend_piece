@@ -7,7 +7,7 @@
 
 var Client = require('node-rest-client').Client;
 var client = new Client();
-var endpoint = "http://localhost:1337/student"
+var endpoint = "http://localhost:1337/basketball"
 
 module.exports = {
 
@@ -46,6 +46,7 @@ module.exports = {
   read: function (req, res) {
 
     client.get(endpoint, function (data, response) {
+        console.log("read ran");
         return res.view('read', {students: data});
     }).on('error', function (err) {
         return res.view('read', {error: { message: "There was an error getting the students"}});
@@ -104,7 +105,7 @@ module.exports = {
 
     }else{
 
-      client.delete(endpoint + "/" + req.body.student_id, function (data, response) {
+      client.delete(endpoint + "/" + req.body.id, function (data, response) {
 
         if(response.statusCode != "200"){
             req.addFlash("error", data.message);

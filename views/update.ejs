@@ -1,6 +1,6 @@
 <ol class="breadcrumb">
     <li><a href="/">Home</a></li>
-    <li class="active">Edit Student</a></li>
+    <li class="active">Edit Team</a></li>
 </ol>
 
 <br/>
@@ -8,12 +8,12 @@
 
 <form action="#" method="">
   <div class="form-group">
-    <label for="student_id">SELECT AN STUDENT TO UPDATE</label><br/>
-    <select id="student_id" name="student_id">
+    <label for="basketball_id">SELECT A TEAM TO UPDATE</label><br/>
+    <select id="basketball_id" name="id">
     <% if(typeof students != "undefined" && students.length > 0){ %>
       <% students.forEach(function(student){ %>
-        <option value="<%= student.student_id %>">
-          <%= student.last_name + ", " +  student.first_name %>
+        <option value="<%= student.basketball_id %>">
+          <%= student.basketball_id + ", " +  student.team_name %>
         </option>
       <% }) %>
     <% } %>
@@ -21,48 +21,43 @@
   </div>
 </form>
 
-<h2>Update Student</h2>
+<h2>Update Team</h2>
 <form action="/update" method="POST" class="form-horizontal" id="updateStudentForm">
-  <input type="hidden" name="student_id" id="student_id" value="">
+  <input type="hidden" name="id" id="basketball_id" value="">
   <div class="form-group">
-    <label for="first_name" class="col-sm-2 control-label">First Name</label>
+    <label for="team_name" class="col-sm-2 control-label">team_name</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name" required>
+      <input type="text" class="form-control" id="team_name" name="team_name" placeholder="team_name" required>
     </div>
   </div>
   <div class="form-group">
-    <label for="last_name" class="col-sm-2 control-label">Last Name</label>
+    <label for="city" class="col-sm-2 control-label">city</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="last_name" name="last_name"  placeholder="Last Name" required>
+      <input type="text" class="form-control" id="city" name="city"  placeholder="city" required>
     </div>
   </div>
   <div class="form-group">
-    <label for="start_date" class="col-sm-2 control-label">Email Address</label>
+    <label for="offensive_average" class="col-sm-2 control-label">Average PPG</label>
     <div class="col-sm-10">
-      <input type="date" class="form-control" id="start_date" name="start_date" placeholder="2017-01-01" required>
+      <input type="text" class="form-control" id="offensive_average" name="offensive_average" placeholder="" required>
     </div>
   </div>
   <div class="form-group">
-    <label for="gpa" class="col-sm-2 control-label">GPA</label>
+    <label for="logo" class="col-sm-2 control-label">Logo</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="gpa" name="gpa" placeholder="4.0">
+      <input type="text" class="form-control" id="logo" name="logo" placeholder="">
     </div>
   </div>
   <div class="form-group">
-    <label for="sat" class="col-sm-2 control-label">SAT Score</label>
+    <label for="mascot" class="col-sm-2 control-label">Mascot</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="sat" name="sat" placeholder="1400">
+      <input type="text" class="form-control" id="mascot" name="mascot" placeholder="1400">
     </div>
   </div>
-  <div class="form-group">
-    <label for="major_id" class="col-sm-2 control-label">Major ID</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="major_id" name="major_id">
-    </div>
-  </div>
+
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default">Update Student</button>
+      <button type="submit" class="btn btn-default">Update Team</button>
     </div>
   </div>
 </form>

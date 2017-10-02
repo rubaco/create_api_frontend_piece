@@ -1,48 +1,44 @@
 <ol class="breadcrumb">
     <li><a href="/">Home</a></li>
-    <li class="active">Add Student</a></li>
+    <li class="active">Add Team</a></li>
 </ol>
 
 <br/>
 <%- partial ('partials/statusmessage.ejs') %>
 
-<h2>Add Student</h2>
+<h2>Add Team</h2>
 <form action="/create" method="POST" class="form-horizontal" id="addStudentForm">
   <div class="form-group">
-    <label for="first_name" class="col-sm-2 control-label">First Name</label>
+    <label for="team_name" class="col-sm-2 control-label">team name</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name" required>
+      <input type="text" class="form-control" id="team_name" name="team_name" placeholder="team_name" required>
     </div>
   </div>
   <div class="form-group">
-    <label for="last_name" class="col-sm-2 control-label">Last Name</label>
+    <label for="last_name" class="col-sm-2 control-label">city</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="last_name" name="last_name"  placeholder="Last Name" required>
+      <input type="text" class="form-control" id="city" name="city"  placeholder="city" required>
     </div>
   </div>
   <div class="form-group">
-    <label for="start_date" class="col-sm-2 control-label">Start Date</label>
+    <label for="start_date" class="col-sm-2 control-label">average points</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="start_date" name="start_date" placeholder="2017-01-01" required>
+      <input type="text" class="offensive_average" id="offensive_average" name="offensive_average" placeholder="" required>
     </div>
   </div>
   <div class="form-group">
-    <label for="gpa" class="col-sm-2 control-label">GPA</label>
+    <label for="logo" class="col-sm-2 control-label">logo</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="gpa" name="gpa" placeholder="4.0">
+      <input type="text" class="form-control" id="logo" name="logo" placeholder="">
     </div>
   </div>
   <div class="form-group">
-    <label for="sat" class="col-sm-2 control-label">SAT Score</label>
+    <label for="mascot" class="col-sm-2 control-label">mascot</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="sat" name="sat" placeholder="1400">
+      <input type="text" class="form-control" id="mascot" name="mascot" placeholder="">
     </div>
   </div>
-  <div class="form-group">
-    <label for="major_id" class="col-sm-2 control-label">Major ID</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="major_id" name="major_id">
-    </div>
+
   </div>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
